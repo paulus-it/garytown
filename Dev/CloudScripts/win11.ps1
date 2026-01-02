@@ -1,4 +1,4 @@
-#to Run, boot OSDCloudUSB, at the PS Prompt: iex (irm win11.garytown.com)
+#to Run, boot OSDCloudUSB, at the PS Prompt: iex (irm win11.paulus-it.nl)
 
 #region Initialization
 function Write-DarkGrayDate {
@@ -52,7 +52,7 @@ function Write-SectionSuccess {
 }
 #endregion
 
-$ScriptName = 'win11.garytown.com'
+$ScriptName = 'win11.paulus-it.nl'
 $ScriptVersion = '25.01.22.1'
 Write-Host -ForegroundColor Green "$ScriptName $ScriptVersion"
 #iex (irm functions.garytown.com) #Add custom functions used in Script Hosting in GitHub
@@ -130,13 +130,13 @@ if (Test-HPIASupport){
     $Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
     #$Global:MyOSDCloud.HPCMSLDriverPackLatest = [bool]$true #In Test 
     #Set HP BIOS Settings to what I want:
-    iex (irm https://raw.githubusercontent.com/gwblok/garytown/master/OSD/CloudOSD/Manage-HPBiosSettings.ps1)
+    iex (irm https://raw.githubusercontent.com/paulus-it/garytown/master/OSD/CloudOSD/Manage-HPBiosSettings.ps1)
     Manage-HPBiosSettings -SetSettings
 }
 
 if ($Manufacturer -match "Lenovo") {
     #Set Lenovo BIOS Settings to what I want:
-    iex (irm https://raw.githubusercontent.com/gwblok/garytown/master/OSD/CloudOSD/Manage-LenovoBiosSettings.ps1)
+    iex (irm https://raw.githubusercontent.com/paulus-it/garytown/master/OSD/CloudOSD/Manage-LenovoBiosSettings.ps1)
     try {
         Manage-LenovoBIOSSettings -SetSettings
     }
